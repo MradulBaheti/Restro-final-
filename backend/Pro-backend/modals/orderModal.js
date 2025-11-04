@@ -24,6 +24,13 @@ const orderSchema = new mongoose.Schema(
     items: [],
     // This 'ref' matches your tableModal.js export 'mongoose.model("Table", ...)'
     table: { type: mongoose.Schema.Types.ObjectId, ref: "Table" },
+   
+    paymentMethod:String,
+
+    paymentData:{
+      razorpay_order_id:String,
+      razorpay_payment_id:String
+    }
   },
   { timestamps: true }
 );
